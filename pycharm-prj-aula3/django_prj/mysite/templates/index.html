@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicação de Enquetes</title>
+</head>
+<body>
+   <h1>
+       Últimas questões
+   </h1>
+   {% if latest_question_list %}
+     <ul>
+      {% for question in latest_question_list %}
+         <li> <a href="/polls/{{question.id}}/"> {{ question.question_text }} </a></li>
+      {% endfor %}
+     <ul>
+   {% else %}
+       <p> Não existem enquetes abertas para serem respondidas </p>
+   {% endif %}
+   </ul>
+</body>
+</html>
+
